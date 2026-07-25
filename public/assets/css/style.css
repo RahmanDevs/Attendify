@@ -1,0 +1,34 @@
+/* Animation scan line */
+@keyframes scan {
+  0%,
+  100% {
+    top: 5%;
+    opacity: 0.9;
+  }
+  50% {
+    top: 85%;
+    opacity: 0.9;
+  }
+}
+
+.scan-line {
+  animation: scan 2.5s ease-in-out infinite;
+}
+
+/* Responsive Navbar untuk Layar < 400px */
+@media (max-width: 400px) {
+  /* Sembunyikan tombol Mulai Sekarang di layar super sempit */
+  header .flex.items-center.gap-4 a[href="#mulai"] {
+    display: none;
+  }
+
+  /* Atur padding navbar & logo agar lebih pas */
+  header .max-w-7xl {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  header span.text-xl {
+    font-size: 1.125rem; /* 18px */
+  }
+}
