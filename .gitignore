@@ -1,3 +1,11 @@
+# -----------------------
+
+# -----------------------
+# Environment Development 
+docker-compose.yaml
+vendor/
+writable/
+
 #-------------------------
 # Operating Specific Junk Files
 #-------------------------
