@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $this->renderSection('title') ?></title>
 
+    <!-- Favicon Configuration -->
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= base_url('assets/img/favicon/apple-touch-icon.png') ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url('assets/img/favicon/favicon-32x32.png') ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/img/favicon/favicon-16x16.png') ?>">
+    <link rel="icon" type="image/x-icon" href="<?= base_url('assets/img/favicon/favicon.ico') ?>">
+    <link rel="manifest" href="<?= base_url('assets/img/favicon/site.webmanifest') ?>">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,9 +28,25 @@
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
                     },
                     colors: {
-                        navy: { 900: '#0f172a', 800: '#1e293b', 700: '#334155' },
-                        brand: { 700: '#1d4ed8', 600: '#2563eb', 500: '#3b82f6', 400: '#60a5fa', 100: '#dbeafe', 50: '#eff6ff' },
-                        cream: { 300: '#ede6d8', 200: '#f7f3eb', 100: '#fdfbf7', 50: '#fffefc' }
+                        navy: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155'
+                        },
+                        brand: {
+                            700: '#1d4ed8',
+                            600: '#2563eb',
+                            500: '#3b82f6',
+                            400: '#60a5fa',
+                            100: '#dbeafe',
+                            50: '#eff6ff'
+                        },
+                        cream: {
+                            300: '#ede6d8',
+                            200: '#f7f3eb',
+                            100: '#fdfbf7',
+                            50: '#fffefc'
+                        }
                     }
                 }
             }
