@@ -1,9 +1,12 @@
+<!-- Skeleton HTML (Home) -->
 <?= $this->extend('layouts/main') ?>
 
+<!-- Title Section -->
 <?= $this->section('title') ?>
 Attendify | Sistem Absensi Face Recognition Modern
 <?= $this->endSection() ?>
 
+<!-- Content Section -->
 <?= $this->section('content') ?>
     <?= $this->include('components/hero') ?>
     <?= $this->include('components/features') ?>
