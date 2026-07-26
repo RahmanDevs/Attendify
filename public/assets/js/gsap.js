@@ -2,12 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Register Plugin
   gsap.registerPlugin(ScrollTrigger);
 
-  // 1. Animasi Hero Section
+  // Animasi Hero Section
   gsap.fromTo(".hero-text", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power3.out" });
 
   gsap.fromTo(".hero-visual", { x: 50, opacity: 0 }, { x: 0, opacity: 1, duration: 1.2, delay: 0.2, ease: "power3.out" });
 
-  // 2. Animasi Fitur Utama (Fix untuk bug kartu samar/transparan)
+  // Animasi Fitur Utama (Fix untuk bug kartu samar/transparan)
   gsap.fromTo(
     ".feature-card",
     {
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       duration: 0.8,
       stagger: 0.2,
       ease: "power2.out",
-      clearProps: "opacity,transform", // Kunci: Menghapus sisa inline style GSAP setelah animasi selesai
+      clearProps: "opacity,transform",
       scrollTrigger: {
         trigger: "#fitur-utama",
         start: "top 80%",
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   );
 
-  // 3. Animasi Step Cara Kerja
+  // Animasi Step Cara Kerja
   gsap.fromTo(
     ".step-card",
     {
