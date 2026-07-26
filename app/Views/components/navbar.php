@@ -17,8 +17,15 @@
         </nav>
 
         <div class="flex items-center gap-3 md:gap-4">
-            <a href="#demo" class="hidden sm:inline-block px-4 py-2 md:px-5 md:py-2.5 rounded-full text-xs md:text-sm font-semibold text-navy-900 bg-white border border-cream-300 hover:border-brand-500 hover:bg-cream-50 transition-all shadow-sm">Register</a>
-            <a href="#mulai" class="px-4 py-2 md:px-5 md:py-2.5 rounded-full text-xs md:text-sm font-semibold text-white bg-navy-900 hover:bg-brand-600 transition-all shadow-md shadow-navy-900/20">Login</a>
+            <!-- Mengarah ke /login dengan parameter mode register -->
+            <a href="<?= base_url('login?mode=register') ?>" class="hidden sm:inline-block px-4 py-2 md:px-5 md:py-2.5 rounded-full text-xs md:text-sm font-semibold text-navy-900 bg-white border border-cream-300 hover:border-brand-500 hover:bg-cream-50 transition-all shadow-sm">
+                Register
+            </a>
+
+            <!-- Mengarah ke /login biasa (Default Login) -->
+            <a href="<?= base_url('login?mode=login') ?>" class="px-4 py-2 md:px-5 md:py-2.5 rounded-full text-xs md:text-sm font-semibold text-white bg-navy-900 hover:bg-brand-600 transition-all shadow-md shadow-navy-900/20">
+                Login
+            </a>
 
             <button id="menu-btn" class="md:hidden text-2xl text-navy-900 focus:outline-none ml-1">
                 <i class="ri-menu-3-line"></i>

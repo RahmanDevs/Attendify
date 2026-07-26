@@ -30,9 +30,22 @@
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
                     },
                     colors: {
-                        navy: { 700: '#1e293b', 800: '#0f172a', 900: '#0a0f1d' },
-                        brand: { 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8' },
-                        cream: { 50: '#fdfbf7', 100: '#f7f4ed', 200: '#ede8dd', 300: '#e2dacb' }
+                        navy: {
+                            700: '#1e293b',
+                            800: '#0f172a',
+                            900: '#0a0f1d'
+                        },
+                        brand: {
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8'
+                        },
+                        cream: {
+                            50: '#fdfbf7',
+                            100: '#f7f4ed',
+                            200: '#ede8dd',
+                            300: '#e2dacb'
+                        }
                     }
                 }
             }
@@ -41,20 +54,30 @@
 
     <!-- Remix Icon CDN -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- Base CSS (General) -->
 </head>
 
 <body class="bg-gradient-to-br from-cream-100 via-cream-50 to-white min-h-screen font-sans text-navy-800 flex flex-col justify-between items-center p-4">
+    <!-- Wrapper All -->
+    <div class="h-[100dvh] w-full max-w-5xl mx-auto px-4 py-2 flex flex-col justify-between items-center overflow-hidden">
 
-    <!-- Header Section -->
-    <?= $this->include('templates/header'); ?>
-    
-    <!-- Render Dynamic Form Section -->
-    <main class="w-full max-w-4xl my-auto py-6">
-        <?= $this->renderSection('content_login') ?>
-    </main>
-    
-    <!-- Footer -->
-    <?= $this->include('templates/footer'); ?>
-    
+        <!-- Header Section -->
+        <div class="w-full shrink-0">
+            <?= $this->include('templates/header'); ?>
+        </div>
+
+        <!-- Main Content Section -->
+        <main class="w-full max-w-4xl flex-1 flex flex-col justify-center items-center my-auto min-h-0 overflow-hidden">
+            <?= $this->renderSection('content_login') ?>
+        </main>
+
+        <!-- Footer Section -->
+        <div class="w-full shrink-0">
+            <?= $this->include('templates/footer'); ?>
+        </div>
+
+    </div>
 </body>
+
 </html>
