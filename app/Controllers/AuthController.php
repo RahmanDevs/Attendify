@@ -5,8 +5,6 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\UserModel;
-use CodeIgniter\Cache\Handlers\RedisHandler;
-use PhpParser\Node\Stmt\Expression;
 
 class AuthController extends BaseController
 {   

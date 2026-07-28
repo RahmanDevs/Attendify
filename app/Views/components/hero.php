@@ -23,11 +23,11 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-2">
-                    <a href="#mulai" class="w-full sm:w-auto px-6 py-3 rounded-full font-semibold text-sm text-white bg-brand-600 hover:bg-navy-900 transition-all shadow-md shadow-brand-600/20 flex items-center justify-center gap-2 group">
+                    <a href="<?= base_url('login?mode=login') ?>" class="w-full sm:w-auto px-6 py-3 rounded-full font-semibold text-sm text-white bg-brand-600 hover:bg-navy-900 transition-all shadow-md shadow-brand-600/20 flex items-center justify-center gap-2 group">
                         Coba Gratis Sekarang
                         <i class="ri-arrow-right-line group-hover:translate-x-1 transition-transform"></i>
                     </a>
-                    <a href="#demo" class="w-full sm:w-auto px-6 py-3 rounded-full font-semibold text-sm text-navy-900 bg-white border border-cream-300 hover:bg-cream-200 transition-all flex items-center justify-center gap-2 shadow-sm">
+                    <a href="<?= base_url('login?mode=login') ?>" class="w-full sm:w-auto px-6 py-3 rounded-full font-semibold text-sm text-navy-900 bg-white border border-cream-300 hover:bg-cream-200 transition-all flex items-center justify-center gap-2 shadow-sm">
                         <i class="ri-play-circle-fill text-lg text-brand-600"></i>
                         Lihat Demo Live
                     </a>
