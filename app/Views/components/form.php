@@ -5,9 +5,21 @@
 
     <!-- Flash Message Notification -->
     <?php if (session()->getFlashdata('error')) : ?>
-        <div class="absolute top-3 left-1/2 -translate-x-1/2 z-50 bg-red-100 border border-red-400 text-red-700 px-3 py-1.5 rounded-xl text-xs font-semibold shadow-md flex items-center gap-2">
+        <div class="absolute top-3 left-1/2 -translate-x-1/2 z-50 bg-red-100 border border-red-400 text-red-700 px-3 py-1.5 rounded-xl text-xs font-semibold shadow-md flex items-center gap-2 max-w-[90%] text-center">
             <i class="ri-error-warning-fill text-sm"></i>
             <?= esc(session()->getFlashdata('error')) ?>
+        </div>
+    <?php endif; ?>
+    <?php if (session()->getFlashdata('errors')) : ?>
+        <div class="absolute top-3 left-1/2 -translate-x-1/2 z-50 bg-red-100 border border-red-400 text-red-700 px-3 py-1.5 rounded-xl text-xs font-semibold shadow-md flex items-center gap-2 max-w-[90%] text-center">
+            <i class="ri-error-warning-fill text-sm"></i>
+            <?= esc(implode(' ', (array)session()->getFlashdata('errors'))) ?>
+        </div>
+    <?php endif; ?>
+    <?php if (session()->getFlashdata('success')) : ?>
+        <div class="absolute top-3 left-1/2 -translate-x-1/2 z-50 bg-emerald-100 border border-emerald-400 text-emerald-800 px-3 py-1.5 rounded-xl text-xs font-semibold shadow-md flex items-center gap-2 max-w-[90%] text-center">
+            <i class="ri-checkbox-circle-fill text-sm"></i>
+            <?= esc(session()->getFlashdata('success')) ?>
         </div>
     <?php endif; ?>
 
@@ -120,7 +132,7 @@
                     <label class="block text-[11px] font-bold text-navy-900 mb-0.5">Nama Lengkap</label>
                     <div class="relative">
                         <i class="ri-user-line absolute left-3 top-1/2 -translate-y-1/2 text-navy-700 text-xs"></i>
-                        <input type="text" name="fullname" value="<?= esc(old('fullname')) ?>" required placeholder="John Doe" class="w-full pl-9 pr-3 py-1.5 text-xs rounded-xl border border-cream-300 focus:outline-none focus:border-brand-600 transition">
+                        <input type="text" name="name" value="<?= esc(old('name')) ?>" required placeholder="John Doe" class="w-full pl-9 pr-3 py-1.5 text-xs rounded-xl border border-cream-300 focus:outline-none focus:border-brand-600 transition">
                     </div>
                 </div>
 

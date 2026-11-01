@@ -26,10 +26,10 @@ class Database extends Config
      */
     public array $default = [
         'DSN'          => '',
-        'hostname'     => 'localhost',
-        'username'     => '',
-        'password'     => '',
-        'database'     => '',
+        'hostname'     => '127.0.0.1',
+        'username'     => 'attendify_user',
+        'password'     => 'attendify_pass',
+        'database'     => 'attendify',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
@@ -41,7 +41,7 @@ class Database extends Config
         'compress'     => false,
         'strictOn'     => false,
         'failover'     => [],
-        'port'         => 3306,
+        'port'         => 3307,
         'numberNative' => false,
         'foundRows'    => false,
         'dateFormat'   => [
@@ -199,6 +199,25 @@ class Database extends Config
         // we don't overwrite live data on accident.
         if (ENVIRONMENT === 'testing') {
             $this->defaultGroup = 'tests';
+            return;
+        }
+
+        // Check if MySQL TCP port is open (default port 3307 or from .env)
+        $port = (int)(env('database.default.port') ?? 3307);
+        $host = env('database.default.hostname') ?? '127.0.0.1';
+
+        $isMysqlOpen = false;
+        $fp = @fsockopen($host, $port, $errno, $errstr, 0.2);
+        if ($fp) {
+            $isMysqlOpen = true;
+            fclose($fp);
+        }
+
+        // Seamless fallback to SQLite if MySQL Docker container is not currently running
+        if (!$isMysqlOpen) {
+            $this->default['DBDriver']    = 'SQLite3';
+            $this->default['database']    = WRITEPATH . 'attendify.sqlite';
+            $this->default['foreignKeys'] = true;
         }
     }
 }
